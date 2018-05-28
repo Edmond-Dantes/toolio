@@ -1,4 +1,4 @@
-CATEGORY = ["chinese", "italian", "japanese", "french", "belgian"]
+
 
 Exchange.destroy_all
 Item.destroy_all
