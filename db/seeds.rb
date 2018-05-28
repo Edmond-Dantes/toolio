@@ -3,9 +3,9 @@ CATEGORY = ["chinese", "italian", "japanese", "french", "belgian"]
 30.times do
   r = User.new(
     username: Faker::Hacker.adjective,
-    password: Faker::String.random(3..12),
+    password: Faker::Lorem.word,
     email: Faker::Internet.email,
-    phone_number: Faker::PhoneNumber.phone_number,
+    # phone_number: Faker::PhoneNumber.phone_number,
   )
   r.save
   p r
@@ -24,10 +24,11 @@ end
 end
 
 50.times do
+  start_date = Faker::Date.between(60.days.ago, Date.today)
   e = Exchange.new(
     user_id: rand(1..30),
     item_id: rand(1..100),
-    start_date: Faker::Date.between(6.days.ago, Date.today),
+    start_date: start_date,
     end_date: start_date + 7.days
   )
   e.save
