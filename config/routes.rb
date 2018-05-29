@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   end
   resources :items do
    resources :exchanges, only: [:create ]
-   end
   end
   resources :exchanges, only: [:index]
-  end
 end
