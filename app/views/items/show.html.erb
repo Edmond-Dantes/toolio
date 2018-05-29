@@ -1,2 +1,9 @@
 <h1>Items#show</h1>
 <p>Find me in app/views/items/show.html.erb</p>
+
+<%= simple_form_for [@item, @exchange] do |f| %>
+  <%= f.input :start_end, as: :date, start_year: Date.today.year,
+                              end_year: Date.today.year, discard_day: true,
+                              order: [:month, :year] %>
+  <%= f.button :submit %>
+<% end %>
