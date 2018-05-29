@@ -1,2 +1,32 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://res.cloudinary.com/white-fox-communications-llc/image/upload/v1527235671/sport-people-leisure-friendship-and-entertainment-PE2J9GX.jpg');">
+  <div class="banner-content center-align">
+    <h1>Drink Up</h1>
+    <p>Life is short...drink hard</p>
+    <a class="btn btn-primary btn-lg">Start now</a>
+  </div>
+</div>
+<h1 class="center-align">Our Favorite items</h1>
+
+<div class="row">
+  <% @items.each do |item| %>
+  <div class="col s12 m4 l3">
+    <div class="card teal darken-3 center-align">
+      <div class="card-image">
+        <img src="https://source.unsplash.com/400x225/?<%= Faker::Food.spice %> item">
+        <span class="card-title center-align"><%= item.name %></span>
+
+      </div>
+      <!-- <div class="card-content white-text">
+        <% item.ingredients.each # do |ingredient| %>
+        <p>
+        <%= # ingredient.name %>
+        </p>
+        <% # end %>
+      </div> -->
+      <div class="card-action">
+        <%= link_to item.name, item_path(item), class: "center-align" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
