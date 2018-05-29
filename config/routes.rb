@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'exchanges/create'
-  get 'items/index'
-  get 'items/create'
-  get 'items/show'
-  get 'items/destroy'
-  root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: 'items#index'
+  resources :users do
+    resources :items, only: [:create]
+  end
+  resources :items do
+   resources :exchanges, only: [:create ]
+  end
+  resources :exchanges, only: [:index, :show]
 end
