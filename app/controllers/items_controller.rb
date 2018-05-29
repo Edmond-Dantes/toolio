@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
 
   def index
     # @items = Item.paginate(:page => params[:page], :per_page => 12)
-    @items = Item.all
+    @items = Item.paginate(:page => params[:page], :per_page => 7)
   end
 
   def new
@@ -23,6 +23,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @exchange = Exchange.new
   end
 
   def destroy

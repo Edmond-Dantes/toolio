@@ -1,2 +1,27 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<div class="container">
+  <div class="item-container">
+    <div class="item-details">
+      <div class="item-details-name">
+        <h1 class="center-align"><%= @item.name %></h1>
+      </div>
+      <div class="item-details-user">
+        <h3> from <%= @item.user.username %></h3>
+      </div>
+      <div class="item-details-desc">
+        <p><%= @item.description %></p>
+      </div>
+    </div>
+    <div class="item-request">
+      <div class="item-request-photo">
+        <%= image_tag "https://picsum.photos/525/375/?random" %>
+      </div>
+      <div class="item-request-form">
+        <%= simple_form_for [@item, @exchange] do |f| %>
+          <%= f.input :start_date, as: :date, html5: true %>
+          <%= f.input :end_date, as: :date, html5: true %>
+          <%= f.submit "Request to borrow", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
