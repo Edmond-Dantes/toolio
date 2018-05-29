@@ -13,7 +13,7 @@ class ExchangesController < ApplicationController
   end
 
   def show
-    # raise
+    @item = @exchange.item
   end
 
   private
