@@ -10,7 +10,11 @@
       <div class="item-details-desc">
         <p><%= @item.description %></p>
       </div>
+      <% @exchange.errors.full_messages.each do |error| %>
+      <p style="color: red;"><%= error %></p>
+    <% end %>
     </div>
+
     <div class="item-request">
       <div class="item-request-photo">
         <%= image_tag "https://picsum.photos/525/375/?random" %>
