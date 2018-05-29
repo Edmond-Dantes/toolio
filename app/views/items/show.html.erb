@@ -1,2 +1,10 @@
 <h1>Items#show</h1>
 <p>Find me in app/views/items/show.html.erb</p>
+
+<%= @exchange.errors.full_messages %>
+
+<%= simple_form_for [@item, @exchange] do |f| %>
+  <%= f.input :start_date, as: :date, html5: true %>
+  <%= f.input :end_date, as: :date, html5: true %>
+  <%= f.button :submit %>
+<% end %>
