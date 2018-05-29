@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy]
 
   def index
+    # @items = Item.paginate(:page => params[:page], :per_page => 12)
     @items = Item.paginate(:page => params[:page], :per_page => 7)
   end
 
