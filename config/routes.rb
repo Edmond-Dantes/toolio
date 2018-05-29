@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :items, only: [:new, :create]
   end
-  resources :items do
+  resources :items, only: [:show] do
    resources :exchanges, only: [:create ]
   end
   resources :exchanges, only: [:index, :show]

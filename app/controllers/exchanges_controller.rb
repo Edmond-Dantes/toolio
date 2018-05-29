@@ -1,4 +1,5 @@
 class ExchangesController < ApplicationController
+  before_action :set_exchange, only: [:show]
   def create
     @item = Item.find(params[:item_id])
     @exchange = Exchange.new(exchange_params)
@@ -12,6 +13,7 @@ class ExchangesController < ApplicationController
   end
 
   def show
+    # raise
   end
 
   private
