@@ -4,8 +4,13 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+<<<<<<< HEAD
+    <%= f.input :username, required: true, autofocus: true %>
+    <%= f.input :email, required: true  %>
+=======
     <%= f.input :username, autofocus: true %>
     <%= f.input :email, required: true %>
+>>>>>>> 828a5b0c8f55d21d77f5bbd59ebc5f24fa78e5b1
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
   </div>

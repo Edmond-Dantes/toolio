@@ -1,0 +1,32 @@
+.item-request-photo {
+ width: auto;
+ max-height: 75vh;
+ img {
+  border-radius: 3px;
+ }
+}
+
+.item-container {
+ display: flex;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-request {
+  display: flex;
+  flex-direction: column;
+  margin-top: 45px;
+  padding-left: 65px;
+}
+
+.item-request-form {
+   margin-top: 20px;
+}
+
+.item-details-desc
+{
+  margin-top: 10px;
+}
