@@ -1,2 +1,20 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <% @items.each do |item| %>
+    <div class="col-xs-12 col-md-4">
+      <div class="card ">
+        <%= link_to item_path(item), class: "center-align" do%>
+          <div class="card-image">
+            <img src="https://source.unsplash.com/400x225/?<%= Faker::Food.spice %> tool">
+
+          </div>
+        <% end %>
+        <div class="card-description">
+          <%= item.name %>
+        </div>
+
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
