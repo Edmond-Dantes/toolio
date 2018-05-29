@@ -11,10 +11,12 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @item.save
     if @item.save
-      redirect_to @item
+      redirect_to item_path(@item)
     else
-      redirect_to :root
+      raise
+      redirect_to items_path
     end
   end
 
@@ -23,7 +25,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_to :root
+    redirect_to items_path
   end
 
   private
@@ -33,6 +35,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:id, :name, :description, :token_value, :photo, :user)
+    params.require(:item).permit(:id, :name, :description, :token_value, :photo, :user_id)
   end
 end
