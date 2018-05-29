@@ -21,9 +21,7 @@
       </div>
       <div class="item-request-form">
         <%= simple_form_for [@item, @exchange] do |f| %>
-          <%= f.error :start_date %>
           <%= f.input :start_date, as: :date, html5: true %>
-          <%= f.error :end_date %>
           <%= f.input :end_date, as: :date, html5: true %>
           <%= f.submit "Request to borrow", class: "btn btn-primary" %>
         <% end %>
