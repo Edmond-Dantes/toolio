@@ -1,0 +1,20 @@
+<%= form_for(@item) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :description %>
+<%= f.text_field :description %>
+
+<%= f.label :token_value %>
+<%= f.text_field :token_value %>
+
+<%= f.label :photo %>
+<%= f.text_field :photo %>
+
+<%= f.label :user_id %>
+<%= f.text_field :user_id %>
+
+<%= f.submit "Tool It" %>
+<% end %>
+
+<%= params %>
