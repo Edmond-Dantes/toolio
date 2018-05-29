@@ -1,2 +1,28 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<h1 class="center-align">
+ <%= @item.name %></h1>
+<div class="row">
+ <h3> from <%= @item.user.username %></h3>
+ <div class="col s12 m4 l3">
+   <table>
+     <tbody>
+     <tr>
+       <td><%= @item.description %></td>
+     </tr>
+   </tbody>
+   </table>
+ </div>
+ <div class="row">
+
+   <div class="col s12 m8 l9 center-align">
+     <div style="width: 100%;">
+       <% if @item.photo.file.nil? %>
+       <%= cl_image_tag("#{rand(1..5)}.jpg", class: "show_img") %>
+       <% else %>
+       <!-- <%= cl_image_tag ( "#{@item.photo}.jpg", class: "show_img") %> -->
+       <% end %>
+     </div>
+
+   </div>
+ </div>
+
+</div>
