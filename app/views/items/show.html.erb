@@ -1,11 +1,18 @@
 <div class="container">
   <div class="item-container">
     <div class="item-details">
-      <div class="item-details-name">
-        <h1 class="center-align"><%= @item.name %></h1>
-      </div>
-      <div class="item-details-user">
-        <h3> from <%= @item.user.username %></h3>
+      <div class="item-user-details">
+        <div class="item-details-name">
+          <h1 class="center-align"><%= @item.name %></h1>
+        </div>
+        <div class="item-details-user">
+          <div class="username">
+            <h3> from <%= @item.user.username %></h3>
+          </div>
+          <div class="user-avatar">
+            <img src="https://kitt.lewagon.com/placeholder/users/<%= @item.user.username %>">
+          </div>
+        </div>
       </div>
       <div class="item-details-desc">
         <p><%= @item.description %></p>
