@@ -1,6 +1,7 @@
 class Exchange < ApplicationRecord
   belongs_to :user
   belongs_to :item
+  # has_one :lender, through: :item, source: :user
 
   validates :user, :item, :start_date, :end_date, presence: true
   validates :user, uniqueness: { scope: :item }
