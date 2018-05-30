@@ -1,4 +1,16 @@
-<%= form_for([current_user, @item]) do |f| %>
+<%= simple_form_for([current_user, @item]) do |f| %>
+<% if @item.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+    <ul>
+    <% @item.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= f.label :name %>
 <%= f.text_field :name %>
 
@@ -8,10 +20,10 @@
 <%= f.label :token_value %>
 <%= f.text_field :token_value %>
 
-<%= f.label :photo %>
-<%= f.text_field :photo %>
+<%= f.input :photo %>
+<%= f.input :photo_cache, as: :hidden, class: "btn" %>
 
-<%= f.submit "Tool It" %>
+<%= f.submit "Submit", class: "btn" %>
 <% end %>
 
 <%= params %>
