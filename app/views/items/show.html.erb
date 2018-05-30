@@ -17,7 +17,7 @@
 
     <div class="item-request">
       <div class="item-request-photo">
-        <img src="https://source.unsplash.com/400x225/?<%= Faker::Food.spice %> tool">
+        <%= cl_image_tag @item.photo, height: 325, width: 325, crop: :fill %>>
       </div>
       <div class="item-request-form">
         <%= simple_form_for [@item, @exchange] do |f| %>

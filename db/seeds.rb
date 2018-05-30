@@ -7,6 +7,10 @@ tools = YAML.load_file(tool_path)
 locations = YAML.load_file(location_path)
 p tools
 
+Exchange.destroy_all
+Item.destroy_all
+User.destroy_all
+
 def exchange_setter(i_id)
   u_id = rand(1..30)
   if u_id == Item.find(i_id).user.id
@@ -16,9 +20,6 @@ def exchange_setter(i_id)
   end
 end
 
-Exchange.destroy_all
-Item.destroy_all
-User.destroy_all
 
 30.times do |i|
   r = User.new(
@@ -33,22 +34,23 @@ User.destroy_all
   p r.password
 end
 
-j = 0
 
-new_photos = [
-  "https://source.unsplash.com/Q0mDOn9gWk8/525x375",
-  "https://source.unsplash.com/PtgLGdMzi-Y/525x375",
-  "https://source.unsplash.com/mQgVyUC0V-I/525x375",
-  "https://source.unsplash.com/BL6XQLZeXpg/525x375",
-  "https://source.unsplash.com/y5QFgRV9Mxs/525x375",
-  "https://source.unsplash.com/pVHz7BNe1nA/525x375",
-  "https://source.unsplash.com/PGrp_5aJLC0/525x375",
-  "https://source.unsplash.com/U4CHIP7oMIs/525x375",
-  "https://source.unsplash.com/NpIZhur97aA/525x375",
-  "https://source.unsplash.com/tSXL01Rueis/525x375",
-  "https://source.unsplash.com/Geh-r9A4RBg/525x375",
-  "https://source.unsplash.com/M0WbGFRTXqU/525x375"
-]
+# j = 0
+#
+# new_photos = [
+#   "https://source.unsplash.com/Q0mDOn9gWk8/525x375",
+#   "https://source.unsplash.com/PtgLGdMzi-Y/525x375",
+#   "https://source.unsplash.com/mQgVyUC0V-I/525x375",
+#   "https://source.unsplash.com/BL6XQLZeXpg/525x375",
+#   "https://source.unsplash.com/y5QFgRV9Mxs/525x375",
+#   "https://source.unsplash.com/pVHz7BNe1nA/525x375",
+#   "https://source.unsplash.com/PGrp_5aJLC0/525x375",
+#   "https://source.unsplash.com/U4CHIP7oMIs/525x375",
+#   "https://source.unsplash.com/NpIZhur97aA/525x375",
+#   "https://source.unsplash.com/tSXL01Rueis/525x375",
+#   "https://source.unsplash.com/Geh-r9A4RBg/525x375",
+#   "https://source.unsplash.com/M0WbGFRTXqU/525x375"
+# ]
 
 100.times do |j|
   i = Item.new(
@@ -56,17 +58,23 @@ new_photos = [
     token_value: rand(1..10000),
     name: tools["tools"][j],
     description: Faker::Lorem.paragraph,
-    photo: "https://source.unsplash.com/525x375/?#{tools["tools"][j]}"
+    remote_photo_url: `https://source.unsplash.com/525x375/?#{tools["tools"][j]}`
   )
+  i.save
+  puts i[:photo]
+  p i
+  puts i.valid?
+  puts i.errors.full_messages
+end
 
   #updating to nice photos
-  if j < 12
-    i.photo = new_photos[j]
-  end
-
-  i.save
-  p i
-end
+#   if j < 12
+#     i.photo = new_photos[j]
+#   end
+#
+#   i.save
+#   p i
+# end
 
 
 # new_photos.each_with_index do |photo, index|
@@ -89,4 +97,6 @@ end
   )
   e.save
   p e
+  p e.valid?
+
 end
