@@ -1,0 +1,35 @@
+<h1>Exchanges Index</h1>
+
+<h3>Borrowed Items</h3>
+<ul>
+  <% @borrower_exchanges.each do |borrower_exchange| %>
+
+  <li>
+    <%= link_to borrower_exchange.item.name, exchange_path(borrower_exchange) %>
+  </li>
+
+  <% end %>
+</ul>
+
+<h3>Lent Items</h3>
+<ul>
+  <% @lender_exchanges.each do |lender_exchange| %>
+
+  <li>
+    <%= link_to lender_exchange.item.name, exchange_path(lender_exchange) %>
+     | borrower: <%= lender_exchange.user.username %>
+  </li>
+
+  <% end %>
+</ul>
+
+<h3>Available to Lend Items</h3>
+<ul>
+  <% @available_items.each do |available_item| %>
+
+  <li>
+    <%= link_to available_item.name, item_path(available_item) %>
+  </li>
+
+  <% end %>
+</ul>
