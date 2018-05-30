@@ -32,3 +32,5 @@ end
 
 gem 'faker'
 gem 'will_paginate'
+gem 'figaro'
+gem 'cloudinary'
