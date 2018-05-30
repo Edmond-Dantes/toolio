@@ -1,13 +1,14 @@
 .item-request-photo {
- width: auto;
- max-height: 75vh;
- img {
-  border-radius: 3px;
- }
+  background-size: cover !important;
+  width: auto;
+  max-height: 75vh;
+  img {
+    border-radius: 3px;
+  }
 }
 
 .item-container {
- display: flex;
+  display: flex;
 }
 
 .item-details {
@@ -23,7 +24,7 @@
 }
 
 .item-request-form {
-   margin-top: 20px;
+  margin-top: 20px;
 }
 
 .item-details-desc

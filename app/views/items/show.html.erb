@@ -17,7 +17,7 @@
 
     <div class="item-request">
       <div class="item-request-photo">
-        <img src="https://source.unsplash.com/400x225/?<%= Faker::Food.spice %> tool">
+        <img src="<%= @item.photo %>">
       </div>
       <div class="item-request-form">
         <%= simple_form_for [@item, @exchange] do |f| %>
