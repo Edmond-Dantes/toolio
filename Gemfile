@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.4.4'
 
 gem 'bootsnap', require: false
-gem 'figaro'
+# gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
@@ -32,3 +32,7 @@ end
 
 gem 'faker'
 gem 'will_paginate'
+gem 'figaro'
+gem 'cloudinary'
+gem 'carrierwave'
+gem 'simple_form'

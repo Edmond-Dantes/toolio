@@ -13,6 +13,7 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
 //since html, body and main-content are super high level,
 //their styling can be done here
 
@@ -23,6 +24,7 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+  font-family: 'Roboto', sans-serif;
 }
 
 .main-content {
