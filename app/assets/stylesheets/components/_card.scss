@@ -13,9 +13,10 @@
 }
 .card-description {
   position: absolute;
-  bottom: 30px;
-  left: 30px;
+  top: 10px;
+  left: 25px;
   font-size: 30px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 1);
 }
 .card-description h2 {
   font-size: 24px;
