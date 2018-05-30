@@ -1,11 +1,11 @@
 <div class="container">
-  <div class="row"> 
+  <div class="row">
     <% @items.each do |item| %>
     <div class="col-xs-12 col-md-4">
       <div class="card ">
         <%= link_to item_path(item), class: "center-align" do%>
           <div class="card-image">
-            <img src="https://source.unsplash.com/400x225/?<%= Faker::Food.spice %> tool">
+            <img src="<%= item.photo %>">
           </div>
         <% end %>
         <div class="card-description">
