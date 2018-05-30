@@ -35,6 +35,21 @@ end
 
 j = 0
 
+new_photos = [
+  "https://source.unsplash.com/Q0mDOn9gWk8/525x375",
+  "https://source.unsplash.com/PtgLGdMzi-Y/525x375",
+  "https://source.unsplash.com/mQgVyUC0V-I/525x375",
+  "https://source.unsplash.com/BL6XQLZeXpg/525x375",
+  "https://source.unsplash.com/y5QFgRV9Mxs/525x375",
+  "https://source.unsplash.com/pVHz7BNe1nA/525x375",
+  "https://source.unsplash.com/PGrp_5aJLC0/525x375",
+  "https://source.unsplash.com/U4CHIP7oMIs/525x375",
+  "https://source.unsplash.com/NpIZhur97aA/525x375",
+  "https://source.unsplash.com/tSXL01Rueis/525x375",
+  "https://source.unsplash.com/Geh-r9A4RBg/525x375",
+  "https://source.unsplash.com/M0WbGFRTXqU/525x375"
+]
+
 100.times do |j|
   i = Item.new(
     user_id: rand(1..30),
@@ -43,9 +58,24 @@ j = 0
     description: Faker::Lorem.paragraph,
     photo: "https://source.unsplash.com/525x375/?#{tools["tools"][j]}"
   )
+
+  #updating to nice photos
+  if j < 12
+    i.photo = new_photos[j]
+  end
+
   i.save
   p i
 end
+
+
+# new_photos.each_with_index do |photo, index|
+#   i = Item.find(index + 1)
+#   i.photo = photo
+#   i.save
+#   p i
+# end
+
 
 50.times do |i|
   start_date = Faker::Date.between(Date.today, 60.years.from_now)
