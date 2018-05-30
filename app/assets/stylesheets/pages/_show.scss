@@ -31,9 +31,38 @@
   margin-top: 10px;
 }
 
+h1 {
+  padding: 10px;
+}
+
 .main-block {
   margin: 0 auto;
-  width: 700px;
+  width: 800px;
   text-align: center;
-  background-color: #9d9d9d80;
+  background-color: #9d9d9d50;
+  .item-description {
+    display: flex;
+    .item-info {
+      text-align: left;
+      padding-left: 60px;
+    }
+    .item-image {
+      padding-right: 20px;
+    }
+  }
+  .pickup-location {
+    display: flex;
+    background-size: cover !important;
+    .location-address {
+      text-align: left;
+      padding-left: 30px;
+    }
+    .location-map {
+      padding: 10px;
+    }
+  }
+  .home-button {
+    padding: 5px 30px;
+    margin: 10px;
+  }
 }
