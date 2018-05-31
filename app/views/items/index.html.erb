@@ -1,19 +1,17 @@
 <div class="container">
   <div class="row">
     <% @items.each do |item| %>
-    <div class="col-xs-12 col-md-4">
-      <div class="card ">
+      <div class="col-xs-12 col-md-4">
         <%= link_to item_path(item), class: "center-align" do%>
-          <div class="card-image">
-            <img src="<%= item.photo %>">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= item.photo %>');">
+
+
+            <div class="card-description">
+              <%= item.name %>
+            </div>
           </div>
         <% end %>
-        <div class="card-description">
-          <%= item.name %>
-        </div>
-
       </div>
-    </div>
     <% end %>
   </div>
 </div>
