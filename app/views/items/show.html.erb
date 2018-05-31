@@ -3,11 +3,11 @@
     <div class="item-details">
       <div class="item-user-details">
         <div class="item-details-name">
-          <h1 class="center-align"><%= @item.name %></h1>
+          <h4 class="center-align"><%= @item.name %></h4>
         </div>
         <div class="item-details-user">
           <div class="username">
-            <h3> from <%= @item.user.username %></h3>
+            <h6> <%= @item.user.username %></h6>
           </div>
           <div class="user-avatar">
             <img src="https://kitt.lewagon.com/placeholder/users/<%= @item.user.username %>">
@@ -24,7 +24,7 @@
 
     <div class="item-request">
       <div class="item-request-photo">
-        <%= image_tag @item.photo, class: "item-request-photo" %>
+        <%= cl_image_tag @item.photo, class: "item-request-photo" %>
       </div>
       <div class="item-request-form">
         <%= simple_form_for [@item, @exchange] do |f| %>

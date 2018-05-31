@@ -1,6 +1,7 @@
 .item-request-photo {
   background-size: cover !important;
   width: auto;
+  max-width: 450px;
   max-height: 75vh;
   img {
     border-radius: 3px;
@@ -12,11 +13,13 @@
   // justify-content: space-between;
 }
 .item-details {
+  min-width: 450px;
+  max-width: 550px;
   position: relative;
   padding-top: 30px;
 }
 .item-details-desc {
-  margin-top: 40px;
+  margin-top: 30px;
   // padding-top: 20px;
 }
 .item-user-details {
@@ -29,7 +32,7 @@
   position: absolute;
   right: 0px;
   display: flex;
-  padding-top: 28px;
+  padding-right: 10px;
 }
 .username {
   padding-right: 10px;
@@ -46,8 +49,9 @@
 .item-request {
   display: flex;
   flex-direction: column;
-  margin-top: 45px;
-  padding-left: 65px;
+  margin-top: 30px;
+  padding-left: 35px;
+  padding-bottom: 15px;
 }
 .item-request-form {
   margin-top: 20px;
@@ -66,15 +70,15 @@
   padding-left: 60px;
 }
 .item-image {
-  width: 500px;
-  height: 400px;
+  max-width: 300px;
+  max-height: 300px;
   background-size: cover !important;
   padding-right: 20px;
 }
 
 .pickup-location {
-display: flex;
-background-size: cover !important;
+  display: flex;
+  background-size: cover !important;
 .location-address {
   text-align: left;
   padding-left: 30px;
