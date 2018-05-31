@@ -1,29 +1,48 @@
 <%= simple_form_for([current_user, @item]) do |f| %>
-<% if @item.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
 
-    <ul>
-    <% @item.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
+      <ul>
+      <% @item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-offset-4 col-sm-6">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-4 col-sm-6">
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-4 col-sm-6">
+        <%= f.label :token_value %>
+        <%= f.text_field :token_value %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-4 col-sm-6">
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden, class: "btn" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-4 col-sm-6">
+        <%= f.submit "Submit", class: "btn" %>
+      </div>
+    </div>
   </div>
-<% end %>
 
-<%= f.label :name %>
-<%= f.text_field :name %>
-
-<%= f.label :description %>
-<%= f.text_field :description %>
-
-<%= f.label :token_value %>
-<%= f.text_field :token_value %>
-
-<%= f.input :photo %>
-<%= f.input :photo_cache, as: :hidden, class: "btn" %>
-
-<%= f.submit "Submit", class: "btn" %>
 <% end %>
 
 <%= params %>
