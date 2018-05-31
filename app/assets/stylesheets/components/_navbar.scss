@@ -11,6 +11,11 @@
 }
 
 /* Logo */
+.logo
+  {
+  max-height: 35px;
+  }
+
 .btn {
   border-radius: 50px;
   color: #ffffff;
@@ -38,7 +43,7 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
+  color: #a4a59a;
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
