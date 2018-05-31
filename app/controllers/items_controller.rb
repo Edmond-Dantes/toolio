@@ -3,7 +3,28 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy]
 
   def index
-    @items = Item.paginate(:page => params[:page], :per_page => 12)
+    # @items = Item.paginate(:page => params[:page], :per_page => 12)
+    if user_signed_in?
+      users_near = User.near([current_user.latitude, current_user.longitude], 30).map {|user| user.username}
+      # users_near << "asdf"
+      @items = Item.joins(:user).where('users.username IN (?)', users_near).paginate(:page => params[:page], :per_page => 12)
+      # .where('id IN (?)', [array of values])
+      # @items = Item.all.select {|item| users_near.include?(item.user.username)} #.paginate(:page => params[:page], :per_page => 12)
+
+      # raise
+      # @items = user_items.paginate(:page => params[:page], :per_page => 12)
+      # items_array = []
+      # User.near([current_user.latitude, current_user.longitude], 10).each do |user|
+      #   user.items.each do |item|
+      #     items_array << item
+      #   end
+      # end
+      # @items = items_array.paginate(:page => params[:page], :per_page => 12)
+    else
+      @items = Item.paginate(:page => params[:page], :per_page => 12)
+    end
+
+    # raise
 
     @markers = @items.map do |item|
       {
