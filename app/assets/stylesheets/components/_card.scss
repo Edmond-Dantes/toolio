@@ -54,18 +54,3 @@
 .card-link:hover {
   opacity: 0.1;
 }
-
-/* The animation code */
-@keyframes zoom-in-onclick {
-
-  from {transform: scale(1);}
-  to {transform: scale(20)}
-}
-
-/* The element to apply the animation to */
-.card-onclick-animation {
-  z-index: 10;
-  animation-name: zoom-in-onclick;
-  animation-duration: 1s;
-}
-
