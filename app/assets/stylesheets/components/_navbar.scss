@@ -7,18 +7,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(to right, #005aa7, #fffde4);
+  background: #393845;
 }
 
 /* Logo */
-.btn-danger {
+.btn {
   border-radius: 50px;
   color: #ffffff;
   text-decoration: none;
-  color: #ffffff;
-  background-color: #F01F81;
+  background-color: #940315;
 }
-
 .navbar-wagon .avatar {
     height: 85px;
     width: 85px;
@@ -44,7 +42,7 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #ed7bb0;
+  color: #333;
   text-decoration: none;
 }
 

@@ -9,88 +9,82 @@
 
 .item-container {
   display: flex;
-  .item-details {
-    position: relative;
-    padding-top: 30px;
-    .item-user-details {
-      min-width: 500px;
-      display: flex;
-      text-justify: space-between;
-      align-items: center;
-      .item-details-user {
-        align-items: center;
-        position: absolute;
-        right: 0px;
-        display: flex;
-        padding-top: 28px;
-        .username {
-          padding-right: 10px;
-          h3 {
-            font-size: 25px;
-          }
-        }
-        .user-avatar img {
-          height: 50px;
-          width: 50px;
-          border-radius: 50%;
-          box-shadow: 1px 1px 3px black;
-        }
-      }
-    }
-    .item-details-desc
-    {
-      margin-top: 40px;
-      // padding-top: 20px;
-    }
+}
+.item-details {
+  position: relative;
+  padding-top: 30px;
+}
+.item-details-desc {
+  margin-top: 40px;
+  // padding-top: 20px;
+}
+.item-user-details {
+  display: flex;
+  text-justify: space-between;
+  align-items: center;
+}
+.item-details-user {
+  align-items: center;
+  position: absolute;
+  right: 0px;
+  display: flex;
+  padding-top: 28px;
+}
+.username {
+  padding-right: 10px;
+  h3 {
+    font-size: 25px;
   }
-  .item-request {
-    display: flex;
-    flex-direction: column;
-    margin-top: 45px;
-    padding-left: 65px;
+}
+.user-avatar img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 3px black;
+}
+.item-request {
+  display: flex;
+  flex-direction: column;
+  margin-top: 45px;
+  padding-left: 65px;
+}
 .item-request-form {
   margin-top: 20px;
 }
-  }
-}
-
-
-
-
-
 .main-block {
   margin: 0 auto;
   width: 800px;
   text-align: center;
   background-color: #9d9d9d50;
-  .item-description {
-    display: flex;
-    .item-info {
-      text-align: left;
-      padding-left: 60px;
-    }
-    .item-image {
-      width: 500px;
-      height: 400px;
-      background-size: cover !important;
-      padding-right: 20px;
-    }
-  }
-  .pickup-location {
-    display: flex;
-    background-size: cover !important;
-    .location-address {
-      text-align: left;
-      padding-left: 30px;
-    }
-    .location-map {
-      padding: 10px;
-    }
-  }
-  .home-button {
-    a {
-      padding: 5px 30px;
-      margin: 20px;
-    }
+}
+.item-description {
+  display: flex;
+}
+.item-info {
+  text-align: left;
+  padding-left: 60px;
+}
+.item-image {
+  width: 500px;
+  height: 400px;
+  background-size: cover !important;
+  padding-right: 20px;
+}
+
+.pickup-location {
+display: flex;
+background-size: cover !important;
+.location-address {
+  text-align: left;
+  padding-left: 30px;
+}
+.location-map {
+  padding: 10px;
+}
+}
+.home-button {
+  a {
+    padding: 5px 30px;
+    margin: 20px;
   }
 }
