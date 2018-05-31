@@ -16,6 +16,28 @@
   }
 }
 
+.item-location {
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  // width: 40px;
+}
+
+.card-user {
+  position: absolute;
+  right: 10px;
+  bottom: 50px;
+  width: 30px;
+  border-radius: 50%;
+}
+.card-item-username {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 10px;
+  // width: 40px;
+}
+
 .card-description {
   position: absolute;
   top: 10px;
