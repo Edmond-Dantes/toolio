@@ -24,11 +24,7 @@
 
     <div class="item-request">
       <div class="item-request-photo">
-<<<<<<< HEAD
-        <%= image_tag @item.photo, class: "item-request-photo" %>
-=======
         <%= cl_image_tag @item.photo, height: 325, width: 325, crop: :fill %>
->>>>>>> 2e6d589a1731f32548bcb3247075045388688d59
       </div>
       <div class="item-request-form">
         <%= simple_form_for [@item, @exchange] do |f| %>
