@@ -1,6 +1,9 @@
+
 <div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to "Neighborrow", root_path, class: "btn" %>
+  <%= link_to root_path do %>
+    <%= image_tag "logo.png", class: "logo"%>
+  <% end %>
+  <%= link_to "Search tools available in your neighborhood..", root_path, class: "btn" %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -17,8 +20,12 @@
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-
+        <% if user_signed_in? %>
+        <%= cl_image_tag(current_user.photo, :width =>85, :height => 85, :crop => :thumb, :gravity => :face) %>
+        <% else %>
         <img src="https://kitt.lewagon.com/placeholder/users/google" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <% end %>
+
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <%= render "layouts/dropdown" %>
         </ul>
