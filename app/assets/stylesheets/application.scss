@@ -10,8 +10,7 @@
 @import "font-awesome";
 
 // Your CSS partials
-@import "components/navbar";
-@import "components/footer";
+
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
@@ -31,4 +30,5 @@ body {
 
 .main-content {
   flex: 1 0 auto;
+  min-height: 500px;
 }
