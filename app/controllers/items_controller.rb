@@ -4,6 +4,14 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.paginate(:page => params[:page], :per_page => 12)
+
+    @markers = @items.map do |item|
+      {
+        lat: item.user.latitude,
+        lng: item.user.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def new
