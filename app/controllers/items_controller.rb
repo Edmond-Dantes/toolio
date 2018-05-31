@@ -24,8 +24,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to item_path(@item)
     else
-      raise
-      redirect_to items_path
+      render "items/new"
     end
   end
 

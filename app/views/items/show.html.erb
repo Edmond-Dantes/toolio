@@ -17,9 +17,14 @@
       <div class="item-details-desc">
         <p><%= @item.description %></p>
       </div>
-      <% @exchange.errors.full_messages.each do |error| %>
-      <p style="color: red;"><%= error %></p>
-    <% end %>
+      <% if @exchange.errors.any? %>
+        <div class="errors">
+          <h2 class="error-title"><%= pluralize(@exchange.errors.count, "error") %> prohibited this item from being saved:</h2>
+          <% @exchange.errors.full_messages.each do |error| %>
+            <p class="error"><%= error %></p>
+          <% end %>
+        </div>
+      <% end %>
     </div>
 
     <div class="item-request">
