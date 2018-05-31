@@ -45,7 +45,7 @@ j = 1
     token_value: rand(1..10000),
     name: tools[j]["name"][0],
     description: tools[j]["description"][0],
-    photo: tools[j]["photo"][0]
+    remote_photo_url: tools[j]["photo"][0]
   )
   puts "i valid?"
   puts i.valid?

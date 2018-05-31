@@ -33,7 +33,7 @@ end
 gem 'faker'
 gem 'will_paginate'
 gem 'figaro'
-gem 'cloudinary'
 gem 'carrierwave'
+gem 'cloudinary'
 # gem 'simple_form'
 gem "geocoder"
