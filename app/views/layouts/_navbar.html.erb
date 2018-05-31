@@ -1,6 +1,9 @@
-  <div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to "Neighborrow", root_path, class: "btn" %>
+
+<div class="navbar-wagon">
+  <%= link_to root_path do %>
+    <%= image_tag "logo.png", class: "logo"%>
+  <% end %>
+  <%= link_to "Search tools available in your neighborhood..", root_path, class: "btn" %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">

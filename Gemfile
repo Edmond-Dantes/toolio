@@ -35,5 +35,4 @@ gem 'will_paginate'
 gem 'figaro'
 gem 'carrierwave'
 gem 'cloudinary'
-# gem 'simple_form'
 gem "geocoder"
