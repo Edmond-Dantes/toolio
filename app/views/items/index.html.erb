@@ -12,10 +12,13 @@
                   <p class="card-item-username"><%= item.user.username %> </p>
 
                 <div class="card-description">
-                  <%= item.name %>
+                  <%= item.name.capitalize %>
                 </div>
                 <div class="item-location">
-                  <p><%= item.user.location %> </p>
+                  <p>
+                    <%= item.user.location.capitalize %>
+                    <br>
+                    <%= item.user.distance_to(current_user).round(2).to_s + "km away" %></p>
                 </div>
               </div>
             <% end %>
