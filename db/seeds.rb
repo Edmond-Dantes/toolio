@@ -12,7 +12,7 @@ Item.destroy_all
 User.destroy_all
 
 def exchange_setter(i_id)
-  u_id = rand(1..30)
+  u_id = rand(1..15)
   if u_id == Item.find(i_id).user.id
     exchange_setter(i_id)
   else
@@ -21,7 +21,7 @@ def exchange_setter(i_id)
 end
 
 
-30.times do |i|
+15.times do |i|
   r = User.new(
     username: Faker::Lorem.characters(9),
     password: Faker::Lorem.characters(7),
@@ -34,60 +34,32 @@ end
   p r.password
 end
 
+j = 1
 
-# j = 0
-#
-# new_photos = [
-#   "https://source.unsplash.com/Q0mDOn9gWk8/525x375",
-#   "https://source.unsplash.com/PtgLGdMzi-Y/525x375",
-#   "https://source.unsplash.com/mQgVyUC0V-I/525x375",
-#   "https://source.unsplash.com/BL6XQLZeXpg/525x375",
-#   "https://source.unsplash.com/y5QFgRV9Mxs/525x375",
-#   "https://source.unsplash.com/pVHz7BNe1nA/525x375",
-#   "https://source.unsplash.com/PGrp_5aJLC0/525x375",
-#   "https://source.unsplash.com/U4CHIP7oMIs/525x375",
-#   "https://source.unsplash.com/NpIZhur97aA/525x375",
-#   "https://source.unsplash.com/tSXL01Rueis/525x375",
-#   "https://source.unsplash.com/Geh-r9A4RBg/525x375",
-#   "https://source.unsplash.com/M0WbGFRTXqU/525x375"
-# ]
+16.times do |j|
 
-100.times do |j|
+  puts "tools[j]"
+  p tools[j]
   i = Item.new(
-    user_id: rand(1..30),
+    user_id: rand(1..15),
     token_value: rand(1..10000),
-    name: tools["tools"][j],
-    description: Faker::Lorem.paragraph,
-    remote_photo_url: `https://source.unsplash.com/525x375/?#{tools["tools"][j]}`
+    name: tools[j]["name"][0],
+    description: tools[j]["description"][0],
+    remote_photo_url: tools[j]["photo"][0]
   )
+  puts "i valid?"
+  puts i.valid?
+  puts i.errors.messages
   i.save
   puts i[:photo]
   p i
-  puts i.valid?
-  puts i.errors.full_messages
+  puts
+  puts
 end
 
-  #updating to nice photos
-#   if j < 12
-#     i.photo = new_photos[j]
-#   end
-#
-#   i.save
-#   p i
-# end
-
-
-# new_photos.each_with_index do |photo, index|
-#   i = Item.find(index + 1)
-#   i.photo = photo
-#   i.save
-#   p i
-# end
-
-
-50.times do |i|
+25.times do |i|
   start_date = Faker::Date.between(Date.today, 60.years.from_now)
-  i_id = rand(1..100)
+  i_id = rand(1..16)
   u_id = exchange_setter(i_id)
   e = Exchange.new(
     user_id: u_id,
