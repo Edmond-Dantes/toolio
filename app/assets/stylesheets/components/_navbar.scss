@@ -39,6 +39,9 @@
 .navbar-wagon-item {
   cursor: pointer;
   padding: 0 20px;
+  img {
+    border-radius: 50%;
+  }
 }
 
 /* Navbar link */
