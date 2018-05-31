@@ -17,7 +17,7 @@
 
     <div class="item-request">
       <div class="item-request-photo">
-        <%= image_tag "https://picsum.photos/525/375/?random" %>
+        <%= image_tag @item.photo, class: "item-request-photo" %>
       </div>
       <div class="item-request-form">
         <%= simple_form_for [@item, @exchange] do |f| %>

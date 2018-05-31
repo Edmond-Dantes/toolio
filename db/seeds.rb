@@ -8,7 +8,7 @@ locations = YAML.load_file(location_path)
 p tools
 
 def exchange_setter(i_id)
-  u_id = rand(1..30)
+  u_id = rand(1..15)
   if u_id == Item.find(i_id).user.id
     exchange_setter(i_id)
   else
@@ -20,7 +20,7 @@ Exchange.destroy_all
 Item.destroy_all
 User.destroy_all
 
-30.times do |i|
+15.times do |i|
   r = User.new(
     username: Faker::Lorem.characters(9),
     password: Faker::Lorem.characters(7),
@@ -33,23 +33,31 @@ User.destroy_all
   p r.password
 end
 
-j = 0
+j = 1
 
-100.times do |j|
+16.times do |j|
+
+  puts "tools[j]"
+  p tools[j]
   i = Item.new(
-    user_id: rand(1..30),
+    user_id: rand(1..15),
     token_value: rand(1..10000),
-    name: tools["tools"][j],
-    description: Faker::Lorem.paragraph,
-    photo: "https://source.unsplash.com/525x375/?#{tools["tools"][j]}"
+    name: tools[j]["name"][0],
+    description: tools[j]["description"][0],
+    photo: tools[j]["photo"][0]
   )
+  puts "i valid?"
+  puts i.valid?
+  puts i.errors.messages
   i.save
   p i
+  puts
+  puts
 end
 
-50.times do |i|
+25.times do |i|
   start_date = Faker::Date.between(Date.today, 60.years.from_now)
-  i_id = rand(1..100)
+  i_id = rand(1..16)
   u_id = exchange_setter(i_id)
   e = Exchange.new(
     user_id: u_id,
