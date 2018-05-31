@@ -14,11 +14,8 @@
   position: relative;
   padding-top: 30px;
 }
-.item-details-desc {
-  margin-top: 40px;
-  // padding-top: 20px;
-}
 .item-user-details {
+  min-width: 500px;
   display: flex;
   text-justify: space-between;
   align-items: center;
@@ -36,6 +33,18 @@
     font-size: 25px;
   }
 }
+.user-avatar img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 3px black;
+}
+.item-details-desc
+{
+  margin-top: 40px;
+  // padding-top: 20px;
+}
+
 .user-avatar img {
   height: 50px;
   width: 50px;
