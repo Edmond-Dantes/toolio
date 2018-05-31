@@ -1,11 +1,11 @@
 <%= simple_form_for([current_user, @item]) do |f| %>
   <% if @item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+    <div class="errors" id="error_explanation">
+      <h2 class="error-title"><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
 
       <ul>
       <% @item.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li class="error"><%= message %></li>
       <% end %>
       </ul>
     </div>
@@ -24,7 +24,7 @@
         <div class="col-sm-offset-3 col-sm-6" id="description">
           <%= f.label :"Add a short description" %>
           <br>
-          <%= f.text_area :description, placeholder:"ex. chain blade tempest", style: "width: 100%; height: 200px"  %>
+          <%= f.text_area :description, placeholder:"ex. an old but good chainsaw that cuts well", style: "width: 100%; height: 200px"  %>
         </div>
       </div>
       <div class="row">
