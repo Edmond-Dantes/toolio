@@ -1,30 +1,28 @@
 /* Main navbar */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: #393845;
 }
 
 /* Logo */
-.btn-danger {
+.btn {
   border-radius: 50px;
   color: #ffffff;
   text-decoration: none;
-  color: #ffffff;
+  background-color: #940315;
 }
-
-/* User Avatar */
 .navbar-wagon .avatar {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
+    height: 85px;
+    width: 85px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 3px black;
 }
-
 /* Right section */
 .navbar-wagon-right {
   display: flex;
@@ -44,7 +42,7 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: #333;
   text-decoration: none;
 }
 

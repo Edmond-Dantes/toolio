@@ -1,13 +1,13 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to "Neighborrow", root_path, class: "btn btn-danger" %>
+  <%= link_to "Neighborrow", root_path, class: "btn" %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
       <%= link_to "Add new item", new_user_item_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Signout", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to current_user.username, "#", class: "navbar-wagon-item navbar-wagon-link dropdown-toggle black" %>
     <% else %>
       <%= link_to "Sign In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
@@ -20,15 +20,7 @@
 
         <img src="https://kitt.lewagon.com/placeholder/users/google" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li>
-            <a href="#">Profile</a>
-          </li>
-          <li>
-            <a href="#">Dashboard</a>
-          </li>
-          <li>
-            <a href="#">Log Out</a>
-          </li>
+          <%= render "layouts/dropdown" %>
         </ul>
       </div>
     </div>
@@ -39,15 +31,7 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li>
-          <a href="#">Host</a>
-        </li>
-        <li>
-          <a href="#">Trips</a>
-        </li>
-        <li>
-          <a href="#">Messagese</a>
-        </li>
+        <%= render "layouts/dropdown" %>
       </ul>
     </div>
   </div>

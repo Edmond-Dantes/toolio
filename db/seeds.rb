@@ -7,6 +7,10 @@ tools = YAML.load_file(tool_path)
 locations = YAML.load_file(location_path)
 p tools
 
+Exchange.destroy_all
+Item.destroy_all
+User.destroy_all
+
 def exchange_setter(i_id)
   u_id = rand(1..15)
   if u_id == Item.find(i_id).user.id
@@ -16,9 +20,6 @@ def exchange_setter(i_id)
   end
 end
 
-Exchange.destroy_all
-Item.destroy_all
-User.destroy_all
 
 15.times do |i|
   r = User.new(
@@ -50,6 +51,7 @@ j = 1
   puts i.valid?
   puts i.errors.messages
   i.save
+  puts i[:photo]
   p i
   puts
   puts
@@ -67,4 +69,6 @@ end
   )
   e.save
   p e
+  p e.valid?
+
 end
