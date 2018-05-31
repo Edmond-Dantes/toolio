@@ -33,5 +33,6 @@ end
 gem 'faker'
 gem 'will_paginate'
 gem 'figaro'
-gem 'cloudinary'
 gem 'carrierwave'
+gem 'cloudinary'
+gem "geocoder"
