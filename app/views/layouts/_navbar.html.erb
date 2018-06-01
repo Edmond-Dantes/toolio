@@ -3,8 +3,11 @@
   <%= link_to root_path do %>
     <%= image_tag "logo.png", class: "logo"%>
   <% end %>
-  <%= link_to "Search tools..", root_path, class: "btn" %>
 
+  <form class="form-inline">
+    <input class="form-control mr-sm-2 mr-4" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
@@ -17,6 +20,7 @@
       <%= link_to "Sign In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
+
 
     <!-- Profile picture with dropdown list -->
     <% if user_signed_in? %>
