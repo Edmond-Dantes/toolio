@@ -1,35 +1,66 @@
-<h1>Exchanges Index</h1>
+<div class="container">
+  <h1>My Dashboard</h1>
 
-<h3>Borrowed Items</h3>
-<ul>
-  <% @borrower_exchanges.each do |borrower_exchange| %>
+  <h3>Currently Borrowing</h3>
+    <% @borrower_exchanges.each do |borrower_exchange| %>
+      <div class="message">
+        <%= cl_image_tag(borrower_exchange.item.user.photo, class: "user_avatar") %>
+        <div class="message-name">
+          <h3><%= borrower_exchange.item.user.username %></h3>
+        </div>
+        <div class="message-body">
+          <p><strong><%= link_to borrower_exchange.item.name, exchange_path(borrower_exchange) %></strong></p>
+          <p>
+            <%= borrower_exchange.item.description %>
+          </p>
+        </div>
+        <div class="message-status">
+          <p class="status pending">Token</p>
+          <p class="price"><%= borrower_exchange.item.token_value %></p>
+        </div>
+      </div>
+    <% end %>
 
-  <li>
-    <%= link_to borrower_exchange.item.name, exchange_path(borrower_exchange) %>
-  </li>
+  <h3>Currently Lending</h3>
+  <ul>
+    <% @lender_exchanges.each do |lender_exchange| %>
+      <div class="message">
+        <%= cl_image_tag(borrower_exchange.user.photo, class: "user_avatar") %>
+        <div class="message-name">
+          <h3><%= borrower_exchange.user.username %></h3>
+        </div>
+        <div class="message-body">
+          <p><strong><%= link_to lender_exchange.item.name, exchange_path(lender_exchange) %>
+       | borrower: <%= lender_exchange.user.username %></strong></p>
+          <p>
+            <%= lender_exchange.item.description %>
+          </p>
+        </div>
+        <div class="message-status">
+          <p class="status pending">Token</p>
+          <p class="price"><%= lender_exchange.item.token_value %></p>
+        </div>
+      </div>
+    <% end %>
+  </ul>
 
-  <% end %>
-</ul>
-
-<h3>Lent Items</h3>
-<ul>
-  <% @lender_exchanges.each do |lender_exchange| %>
-
-  <li>
-    <%= link_to lender_exchange.item.name, exchange_path(lender_exchange) %>
-     | borrower: <%= lender_exchange.user.username %>
-  </li>
-
-  <% end %>
-</ul>
-
-<h3>Available to Lend Items</h3>
-<ul>
+  <h3>Available to Lend</h3>
   <% @available_items.each do |available_item| %>
-
-  <li>
-    <%= link_to available_item.name, item_path(available_item) %>
-  </li>
-
+    <div class="message">
+        <%= cl_image_tag(available_item.photo, class: "item_photo") %>
+          <div class="message-body">
+            <p><strong><%= link_to available_item.name, exchange_path(available_item) %></strong></p>
+          <p>
+            <%= available_item.description %>
+          </p>
+          </div>
+          <div class="message-status">
+            <p class="status pending">Token</p>
+            <p class="price"><%= available_item.token_value %></p>
+          </div>
+        </div>
+      </div>
   <% end %>
-</ul>
+</div>
+
+
