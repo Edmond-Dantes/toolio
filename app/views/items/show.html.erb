@@ -7,10 +7,10 @@
         </div>
         <div class="item-details-user">
           <div class="username">
-            <h6> <%= @item.user.username %></h6>
+            <h6><%= @item.user.username %></h6>
           </div>
           <div class="user-avatar">
-            <img src="https://kitt.lewagon.com/placeholder/users/<%= @item.user.username %>">
+            <%= cl_image_tag(@item.user.photo) %>
           </div>
         </div>
       </div>

@@ -76,6 +76,12 @@
 .item-info {
   text-align: left;
 }
+.lender-avatar img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 3px black;
+}
 .item-image {
   max-width: 400px;
   background-size: cover !important;
