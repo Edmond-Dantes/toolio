@@ -5,7 +5,7 @@
   <% end %>
   <!-- <%= link_to "Search tools available in your neighborhood..", root_path, class: "btn" %> -->
 
-  <form class="form-inline">
+  <form class="form-inline" id="search-bar">
     <input class="form-control mr-sm-2 mr-4" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
@@ -39,7 +39,7 @@
   </div>
 
   <!-- Dropdown appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
+  <div class="navbar-wagon-item hidden-md hidden-lg collapsed-menu-gray">
     <div class="dropdown">
       <% if user_signed_in? %>
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
