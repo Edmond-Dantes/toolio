@@ -3,14 +3,25 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy]
 
   def index
-    # @items = Item.paginate(:page => params[:page], :per_page => 12)
     if user_signed_in?
-      # [current_user.latitude, current_user.longitude]
-      users_near = User.near(current_user.to_coordinates, 50).map {|user| user.username}
-      @items = Item.joins(:user).where('users.username IN (?)', users_near).paginate(:page => params[:page], :per_page => 12)
+      # current_user.to_coordinates => [current_user.latitude, current_user.longitude]
+      users_near = User.near(current_user.to_coordinates, 50).map { |user| user.username }
 
+      paginate_settings = { page: params[:page], per_page: 12 } # :page => params[:page], :per_page => 12
+
+      @items = Item.joins(:user).where('users.username IN (?)', users_near).paginate(paginate_settings)
+
+      if params[:query].present?
+        items_near_current_user = Item.joins(:user).where('users.username IN (?)', users_near)
+        items_ncu_filtered = items_near_current_user.search_by_name_and_description(params[:query])
+        @items = items_ncu_filtered.paginate(paginate_settings)
+      end
     else
-      @items = Item.paginate(:page => params[:page], :per_page => 12)
+      @item = Item.paginate(paginate_settings)
+      if params[:query].present?
+        items_anonymous_filtered = Item.search_by_name_and_description(params[:query])
+        @items = items_anonymous_filtered.paginate(paginate_settings)
+      end
     end
 
 

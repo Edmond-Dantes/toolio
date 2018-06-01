@@ -3,7 +3,11 @@
   <%= link_to root_path do %>
     <%= image_tag "logo.png", class: "logo"%>
   <% end %>
-  <%= link_to "Search tools available in your neighborhood..", root_path, class: "btn" %>
+
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" formmethod:"get">Search</button>
+  </form>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
