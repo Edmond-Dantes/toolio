@@ -17,7 +17,9 @@ class ItemsController < ApplicationController
         @items = items_ncu_filtered.paginate(page: params[:page], per_page: 12)
       end
     else
-      @items = Item.all.paginate(page: params[:page], per_page: 12)
+      users_near = User.near('Tokyo, Japan', 100).map { |user| user.username }
+      # @items = Item.all.paginate(page: params[:page], per_page: 12)
+      @items = Item.joins(:user).where('users.username IN (?)', users_near).paginate(page: params[:page], per_page: 12)
       if params[:query].present?
         items_anonymous_filtered = Item.search_by_name_and_description(params[:query])
         @items = items_anonymous_filtered.paginate(page: params[:page], per_page: 12)
