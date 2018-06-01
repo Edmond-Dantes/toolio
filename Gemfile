@@ -36,3 +36,4 @@ gem 'figaro'
 gem 'carrierwave'
 gem 'cloudinary'
 gem "geocoder"
+gem 'pg_search'
