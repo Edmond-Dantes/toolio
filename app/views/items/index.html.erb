@@ -3,7 +3,7 @@
       <div class="container">
         <div class="row">
           <% @items.each do |item| %>
-            <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="col-xs-6 col-sm-6 col-md-4">
               <%= link_to item_path(item), class: "center-align" do%>
                 <div class="card" style="background-image: linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.15)), url('<%= item.photo %>') ;">
                   <div class="card-description">
@@ -17,9 +17,8 @@
       <%= will_paginate @items %></div>
       </div>
     <div
-          id="map"
-          style="width: 100%;
-          height: 600px;"
-          data-markers="<%= @markers.to_json %>"
+      id="map"
+      style="width: 100%;"
+      data-markers="<%= @markers.to_json %>"
     ></div>
 </div>

@@ -3,7 +3,7 @@
   <%= link_to root_path do %>
     <%= image_tag "logo.png", class: "logo"%>
   <% end %>
-  <%= link_to "Search tools available in your neighborhood..", root_path, class: "btn" %>
+  <%= link_to "Search tools..", root_path, class: "btn" %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -12,7 +12,7 @@
       <%= link_to "Add new item", new_user_item_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Dashboard", exchanges_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to current_user.username, "#", class: "navbar-wagon-item navbar-wagon-link dropdown-toggle black" %>
+      <%= link_to current_user.username, edit_user_path(current_user), class: "navbar-wagon-item navbar-wagon-link dropdown-toggle black" %>
     <% else %>
       <%= link_to "Sign In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
