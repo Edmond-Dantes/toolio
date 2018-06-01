@@ -1,17 +1,4 @@
 <div class="main-container">
-<<<<<<< HEAD
-    <div class="cards-container">
-      <div class="container">
-        <div class="row">
-          <% @items.each do |item| %>
-            <div class="col-xs-6 col-sm-6 col-md-4">
-              <%= link_to item_path(item), class: "center-align" do%>
-                <div class="card" style="background-image: linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.15)), url('<%= item.photo %>') ;">
-                  <div class="card-description">
-                    <%= item.name %>
-                  </div>
-=======
-
   <div class="cards-container">
     <div class="container">
       <div class="row">
@@ -31,21 +18,12 @@
                     <%= item.user.location.capitalize %>
                     <br>
                     <%= item.user.distance_to(current_user).round(2).to_s + "km away" %></p>
->>>>>>> 99281fd7ca551358b230ccaf74ad7c1e39868686
                 </div>
+              </div>
               <% end %>
             </div>
           <% end %>
         </div>
-      <%= will_paginate @items %></div>
-      </div>
-<<<<<<< HEAD
-    <div
-      id="map"
-      style="width: 100%;"
-      data-markers="<%= @markers.to_json %>"
-    ></div>
-=======
       <%= will_paginate @items %>
     </div>
   </div>
@@ -56,5 +34,4 @@
     data-markers="<%= @markers.to_json %>"
   ></div>
 
->>>>>>> 99281fd7ca551358b230ccaf74ad7c1e39868686
 </div>
