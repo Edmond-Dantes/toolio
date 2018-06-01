@@ -3,10 +3,10 @@
   <div class="item-description">
     <div class="item-info">
       <div class="item-name">
-        <h2>Item:<%= @item.name %></h2>
+        <h3>Item: <%= @item.name %></h3>
       </div>
       <div class="lender-name">
-        <h3> borrowing from: <%= @item.user.username %></h3>
+        <h4>from: <%= @item.user.username %><%= @item.user.photo %></h4>
         <div class="lender-avatar">
         </div>
       </div>
@@ -16,11 +16,11 @@
     </div>
   </div>
   <div class="borrowing-period">
-    <h3>Borrowing period: <%= @exchange.start_date  %> to <%= @exchange.end_date%></h3>
+    <h4>Borrowing period: <%= @exchange.start_date  %> to <%= @exchange.end_date%></h4>
   </div>
   <div class="pickup-location">
     <div class="location-address">
-      <h3>Pickup location: Meguro 9-12-3 behind dumpster</h3>
+      <h4>Pickup location: Meguro 9-12-3 behind dumpster</h4>
     </div>
     <div class="location-map">
       <img src="https://lh3.googleusercontent.com/wn-aDk6RL1YM06-j0eqE9-aJJJZcOXYwVRXSk7wAWrC_fHAFNk8jQHrgnb_RfNdCppoX61JuaHZ4rjgMEGCjnG9KRgYCi2NagKx-26dvfTXFDIGdVX8tQ2Ht3IAQaaFqgqyExUw9XbHANr49XnRTgmkAtsABj-7GGHf6gESAz8C6oDFUmTvT_RAuctGZflIo3fWMweH30mPiHrfuL_JhD_Aa1qXpGKNMq-Z47lbS59vra704euQy-y6gLTJMyvbOJ_OqyIzh_3-tjFEZH6m7k80Sp0bkeoP0k8lOXNZctjXCkJmHLRtJ1f0Gggk9k7B3DYWF2H3BI5jwTOiMGxuBucNjoIKN4xbSwhFaZ4Ma2Om6rGeo1X_CQdlQ5OjwJKAddc0tAyN1BNILzU_OVHXmDg-HkLcAPEZAA3sIi60sQCq2OLXRbxtSfc5uMcZ4UsILoQuEyUxBFNEhHfl7V2LGUTMbHwwK8wR7GEiAMnmg_dUX5xjRB83LKgbOOZlFW6k6URODnZFsGLT4IHP3BmISaes2mnyhwpIU8n8IMNtbKkpVZYwdtpXR3VxqO3WUo5S-Rkm1sNY4zMiyIoZHjegS4RiKAVUgewziMMAleLw=w424-h278-no">
