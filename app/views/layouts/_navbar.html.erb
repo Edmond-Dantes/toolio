@@ -10,27 +10,31 @@
 
     <% if user_signed_in? %>
       <%= link_to "Add new item", new_user_item_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Dashboard", exchanges_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My Dashboard", exchanges_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
+<<<<<<< HEAD
       <%= link_to current_user.username, edit_user_path(current_user), class: "navbar-wagon-item navbar-wagon-link dropdown-toggle black" %>
+=======
+      <%#= link_to current_user.username, "#", class: "navbar-wagon-item navbar-wagon-link dropdown-toggle black" %>
+>>>>>>> 99281fd7ca551358b230ccaf74ad7c1e39868686
     <% else %>
       <%= link_to "Sign In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
 
     <!-- Profile picture with dropdown list -->
-    <div class="navbar-wagon-item">
-      <div class="dropdown">
-        <% if user_signed_in? %>
-          <%= cl_image_tag(current_user.photo, :width =>85, :height => 85, :crop => :thumb, :gravity => :face) %>
+    <% if user_signed_in? %>
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <%= cl_image_tag(current_user.photo, :width =>85, :height => 85, :crop => :thumb, :gravity => :face, data: {toggle: "dropdown"}) %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <%= render "layouts/dropdown" %>
           </ul>
-        <% else %>
-          <!-- TODO: Unsigned in User Icon -->
-        <% end %>
+        </div>
       </div>
-    </div>
+    <% else %>
+      <!-- TODO: Unsigned in User Icon -->
+    <% end %>
   </div>
 
   <!-- Dropdown appearing on mobile only -->

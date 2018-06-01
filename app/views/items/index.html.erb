@@ -1,4 +1,5 @@
 <div class="main-container">
+<<<<<<< HEAD
     <div class="cards-container">
       <div class="container">
         <div class="row">
@@ -9,6 +10,28 @@
                   <div class="card-description">
                     <%= item.name %>
                   </div>
+=======
+
+  <div class="cards-container">
+    <div class="container">
+      <div class="row">
+        <% @items.each do |item| %>
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <%= link_to item_path(item), class: "center-align" do%>
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= item.photo %>');">
+
+                <%= cl_image_tag(item.user.photo, :width =>30, :height => 30, :crop => :thumb, :gravity => :face, class: "card-user") %>
+                  <p class="card-item-username"><%= item.user.username %> </p>
+
+                <div class="card-description">
+                  <%= item.name.capitalize %>
+                </div>
+                <div class="item-location">
+                  <p>
+                    <%= item.user.location.capitalize %>
+                    <br>
+                    <%= item.user.distance_to(current_user).round(2).to_s + "km away" %></p>
+>>>>>>> 99281fd7ca551358b230ccaf74ad7c1e39868686
                 </div>
               <% end %>
             </div>
@@ -16,9 +39,22 @@
         </div>
       <%= will_paginate @items %></div>
       </div>
+<<<<<<< HEAD
     <div
       id="map"
       style="width: 100%;"
       data-markers="<%= @markers.to_json %>"
     ></div>
+=======
+      <%= will_paginate @items %>
+    </div>
+  </div>
+
+  <div
+    id="map"
+    style="width: 100%;"
+    data-markers="<%= @markers.to_json %>"
+  ></div>
+
+>>>>>>> 99281fd7ca551358b230ccaf74ad7c1e39868686
 </div>

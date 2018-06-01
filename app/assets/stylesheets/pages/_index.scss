@@ -22,13 +22,14 @@
 @media only screen and (max-width : 767px) {
   .main-container{
     flex-direction: column;
- }
- .cards-container {
+  }
+  .cards-container {
     width: 100%;
   }
   #map {
-  position: sticky !important;
-  bottom: 0 !important;
-  height: 25vh;
+    position: sticky !important;
+    bottom: 0 !important;
+    top: auto;
+    height: 25vh;
   }
- }
+}
