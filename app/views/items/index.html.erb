@@ -18,14 +18,14 @@
                   <p>
                     <%= item.user.location.capitalize %>
                     <br>
-                    <%= item.user.distance_to(current_user).round(2).to_s + "km away" %></p>
+                    <%= item.user.distance_to(current_user).round(2).to_s + "km away" if user_signed_in? %></p>
                 </div>
               </div>
             <% end %>
           </div>
         <% end %>
       </div>
-      <%= will_paginate @items %>
+      <%= will_paginate @items, class: "digg_pagination mt-2 mx-auto"%>
     </div>
   </div>
 
@@ -36,4 +36,3 @@
   ></div>
 
 </div>
-

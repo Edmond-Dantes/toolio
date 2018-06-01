@@ -2,10 +2,13 @@ require 'yaml'
 
 tool_path = File.join(File.dirname(__FILE__), 'tools.yml')
 location_path = File.join(File.dirname(__FILE__), 'locations.yml')
+user_photos_path = File.join(File.dirname(__FILE__), 'user_photos.yml')
 
 tools = YAML.load_file(tool_path)
 locations = YAML.load_file(location_path)
+user_photos = YAML.load_file(user_photos_path)
 p tools
+
 
 Exchange.destroy_all
 Item.destroy_all
@@ -23,15 +26,19 @@ end
 
 15.times do |i|
   r = User.new(
-    username: Faker::Lorem.characters(9),
+    username: Faker::Internet.user_name,
     password: Faker::Lorem.characters(7),
     email: Faker::Internet.email,
-    location: locations["locations"][i]
+    location: locations["locations"][i],
+    remote_photo_url: user_photos["photos"][i]
   )
+  puts "5 second wait..."
+  sleep(5)
   r.save
   p r
   p r.valid?
   p r.password
+  puts
 end
 
 j = 1
