@@ -1,34 +1,36 @@
-<div class="main-block">
-  <h1>Request Confirmed!</h1>
+<div class="main-block" style="padding: 0px 25px 5px 25px; margin: 40px auto; box-shadow: 1px 2px 3px rgba(0,0,0,0.8);">
+  <h1 style="padding-top: 20px;">Request Confirmed!</h1>
+  <h4 style="text-align: center; padding-bottom: 25px;"><strong><%= @exchange.start_date.strftime('%A, %b %d, %Y')  %><small> to </small> <%= @exchange.end_date.strftime('%A, %b %d, %Y') %></strong></h4>
   <div class="item-description">
     <div class="item-info">
-      <div class="item-name">
-        <h3>Item: <%= @item.name %></h3>
+      <div class="item-name pl-2" style="padding-left: 35px;">
+        <h3> <%= @item.name %></h3>
       </div>
-      <div class="lender-name">
-        <h4>from: <%= @item.user.username %></h4>
+      <div class="lender-name" style="padding-left: 35px;">
         <div class="lender-avatar">
-          <%= cl_image_tag(@item.user.photo) %>
+          <p> <%= @item.description %></p>
         </div>
       </div>
     </div>
-    <div class="item-image">
+    <div class="item-image" style="margin: 0px 35px 10px 0px; box-shadow: 1px 2px 3px rgba(0,0,0,0.8);">
       <img src="<%= @item.photo %>">
     </div>
   </div>
   <div class="borrowing-period">
-    <h4>Borrowing period: <%= @exchange.start_date  %> to <%= @exchange.end_date%></h4>
+    <h4></h4>
   </div>
-  <div class="pickup-location">
-    <div class="location-address">
-      <h4>Pickup location: <%= @item.user.location.capitalize %> behind dumpster</h4>
+  <div class="pickup-location" style="padding-top: 10px;" >
+    <div class="location-address" style="text-align: center; padding-top: 15px;">
+      <h3>Pickup Location</h3>
+      <h4 style="padding: 35px 0px 35px 0px;"><strong><%= @item.user.location.capitalize %></strong></h4>
+      <p style="text-align: center; font-style: italic;">Please contact user <strong><%= @item.user.username %></strong> to arrange the time and exact location.</p>
     </div>
-    <div class="location-map">
+    <div class="location-map" style="margin-left: 20px; box-shadow: 1px 2px 3px rgba(0,0,0,0.8);">
       <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&sensor=true&maptype=roadmap&markers=color:red|#{@item.user.location + " station"}" %>
       <%#= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&sensor=false&maptype=roadmap&markers=color:red|#{@item.user.location}"%>
     </div>
   </div>
-  <div class="home-button">
+  <div class="home-button" style="padding-top: 10px;">
   <%= link_to "home", root_path, class: "btn" %>
   </div>
 </div>
