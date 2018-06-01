@@ -9,20 +9,20 @@ class ItemsController < ApplicationController
 
       # paginate_settings => :page => params[:page], :per_page => 12
 
-      @items = Item.joins(:user).where('users.username IN (?)', users_near).paginate(page: params[:page], per_page: 12)
+      @items = Item.joins(:user).where('users.username IN (?)', users_near).paginate(page: params[:page], per_page: 8)
 
       if params[:query].present?
         items_near_current_user = Item.joins(:user).where('users.username IN (?)', users_near)
         items_ncu_filtered = items_near_current_user.search_by_name_and_description(params[:query])
-        @items = items_ncu_filtered.paginate(page: params[:page], per_page: 12)
+        @items = items_ncu_filtered.paginate(page: params[:page], per_page: 8)
       end
     else
       users_near = User.near('Tokyo, Japan', 100).map { |user| user.username }
       # @items = Item.all.paginate(page: params[:page], per_page: 12)
-      @items = Item.joins(:user).where('users.username IN (?)', users_near).paginate(page: params[:page], per_page: 12)
+      @items = Item.joins(:user).where('users.username IN (?)', users_near).paginate(page: params[:page], per_page: 8)
       if params[:query].present?
         items_anonymous_filtered = Item.search_by_name_and_description(params[:query])
-        @items = items_anonymous_filtered.paginate(page: params[:page], per_page: 12)
+        @items = items_anonymous_filtered.paginate(page: params[:page], per_page: 8)
       end
     end
 
