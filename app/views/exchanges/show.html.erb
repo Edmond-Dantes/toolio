@@ -26,7 +26,7 @@
       <p style="text-align: center; font-style: italic;">Please contact user <strong><%= @item.user.username %></strong> to arrange the time and exact location.</p>
     </div>
     <div class="location-map" style="margin-left: 20px; box-shadow: 1px 2px 3px rgba(0,0,0,0.8);">
-      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&sensor=true&maptype=roadmap&markers=color:red|#{@item.user.location + " station"}" %>
+      <img src="https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&sensor=true&maptype=roadmap&markers=color:red|<%= "#{@item.user.location + "+station"}" %>" alt="Location Map">
       <%#= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&sensor=false&maptype=roadmap&markers=color:red|#{@item.user.location}"%>
     </div>
   </div>
