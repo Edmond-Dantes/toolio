@@ -52,6 +52,13 @@ class ItemsController < ApplicationController
 
   def show
     @exchange = Exchange.new
+    @markers = [@item].map do |item|
+      {
+        lat: item.user.latitude,
+        lng: item.user.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def destroy
